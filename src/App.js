@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import DisplayBlogPosts from "./Blog/DisplayBlogPosts";
 import BlogEntry from "./Blog/BlogEntry";

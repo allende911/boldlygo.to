@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { data } from "uikit";
 import BlogEntryForm from "./BlogEntryForm";
 
 const BlogEntry = () => {
