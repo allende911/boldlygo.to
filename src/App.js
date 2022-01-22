@@ -1,14 +1,15 @@
 import "./App.css";
-import DisplayBlogPosts from "./Blog/DisplayBlogPosts";
-import BlogEntry from "./Blog/BlogEntry";
+import AddPostHandler from "./Blog/AddPostHandler";
+import DisplayPosts from "./Blog/DisplayPosts";
+import { Container } from "semantic-ui-react";
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <BlogEntry />
-        <DisplayBlogPosts />
-      </div>
+      <Container>
+        <DisplayPosts />
+        {/* <AddPostHandler /> */}
+      </Container>
     </div>
   );
 }
