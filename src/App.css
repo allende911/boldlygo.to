@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 2em;
   color: #000000;
 }
 
@@ -10,22 +9,16 @@ p {
   font-family: Commissioner, sans-serif;
   font-weight: 400;
   line-height: 1rem;
-  font-size: 1rem;
 }
 
 p strong {
   font-weight: 700;
 }
 
-sub {
-  font-size: 0.9rem;
-}
-
 a {
   text-decoration: dotted underline;
   font-weight: 500;
   color: black;
-  font-size: 1rem;
 }
 
 h1,

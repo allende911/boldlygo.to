@@ -6,11 +6,7 @@ const DisplayDate = (props) => {
   const day = posted.toLocaleString("en-US", { day: "2-digit" });
   const year = posted.getFullYear();
 
-  return (
-    <>
-      <h5>{`Posted on ${month} ${day}, ${year}.`}</h5>
-    </>
-  );
+  return <>{`Posted on ${month} ${day}, ${year}.`}</>;
 };
 
 export default DisplayDate;

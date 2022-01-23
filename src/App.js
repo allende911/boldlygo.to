@@ -1,15 +1,15 @@
 import "./App.css";
 import AddPostHandler from "./Blog/AddPostHandler";
 import DisplayPosts from "./Blog/DisplayPosts";
-import { Container } from "semantic-ui-react";
+import { Container, Card, Icon, Image } from "semantic-ui-react";
+import TopBar from "./UI/TopBar";
 
 function App() {
   return (
     <div className="App">
-      <Container>
-        <DisplayPosts />
-        {/* <AddPostHandler /> */}
-      </Container>
+      <TopBar />
+      <DisplayPosts />
+      {/* <AddPostHandler /> */}
     </div>
   );
 }
