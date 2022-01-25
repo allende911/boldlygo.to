@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewPostForm from "./NewPostForm";
+import NewPostPreview from "./NewPostPreview";
 
 const AddPostHandler = () => {
   const [author, setAuthor] = useState("");
@@ -86,6 +87,11 @@ const AddPostHandler = () => {
         onChangeAuthor={handleAuthor}
         onChangePreviewImage={handlePreviewImage}
         onIsLoading={handleToggleLoading}
+        previewTitle={title}
+        previewContent={content}
+        previewImage={previewImage}
+        previewDate={date}
+        previewAuthor={author}
       />
     </>
   );

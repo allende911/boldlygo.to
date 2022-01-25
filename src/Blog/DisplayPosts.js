@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Container, Menu } from "semantic-ui-react";
-import { strapiParse } from "strapi-parse";
+import { Button, Card, Container, Menu, Segment } from "semantic-ui-react";
 import PostCardSchema from "./PostCardSchema";
+import useFetch from "../Utils/useFetch";
+import { strapiParse } from "strapi-parse";
 
 const DisplayPosts = () => {
   const [blogs, setBlogs] = useState([]);
   const [order, setOrder] = useState(true);
+  const { get, loading } = useFetch("http://localhost:1337/api/");
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/blogs/")
-      .then((response) => response.json())
-      .then((data) => {
-        setBlogs((prevBlogs) => strapiParse(data));
-      });
-    // .catch((error) => console.log(error));
+    get("blogs").then((data) => {
+      setBlogs(strapiParse(data));
+    });
   }, []);
 
   let first = blogs
@@ -22,6 +21,7 @@ const DisplayPosts = () => {
     .map((post) => (
       <PostCardSchema
         key={post.id}
+        id={post.id}
         postPreviewImage={post.PreviewImage}
         postTitle={post.Title}
         postDate={post.Date}
@@ -37,6 +37,7 @@ const DisplayPosts = () => {
     .map((post) => (
       <PostCardSchema
         key={post.id}
+        id={post.id}
         postPreviewImage={post.PreviewImage}
         postTitle={post.Title}
         postDate={post.Date}
@@ -48,32 +49,39 @@ const DisplayPosts = () => {
 
   const handleFirstToLatest = (event) => {
     setOrder(false);
-    console.log(blogs);
   };
 
   const handleLatesttoFirst = (event) => {
     setOrder(true);
-    console.log(blogs);
   };
-
+  {
+  }
   return (
     <>
-      <Button.Group>
-        <Button tiny basic onClick={handleLatesttoFirst}>
-          From the Beginning
-        </Button>
-        <Button tiny basic onClick={handleFirstToLatest}>
-          Newest
-        </Button>
-      </Button.Group>
-      <Card.Group
-        stackable
-        fluid="true"
-        itemsPerRow={5}
-        style={{ paddingLeft: "1em", paddingRight: "1em" }}
-      >
-        {order === true ? latest : first}
-      </Card.Group>
+      <Segment basic className={`${loading === true ? "loading" : ""}`}>
+        <Container>
+          <Button.Group>
+            <Button mini="true" basic onClick={handleLatesttoFirst}>
+              From the Beginning
+            </Button>
+            <Button mini="true" basic onClick={handleFirstToLatest}>
+              Newest
+            </Button>
+          </Button.Group>
+          <Card.Group
+            stackable
+            fluid="true"
+            itemsPerRow={3}
+            style={{
+              paddingLeft: "1em",
+              paddingRight: "1em",
+              marginTop: ".5em",
+            }}
+          >
+            {order === true ? latest : first}
+          </Card.Group>
+        </Container>
+      </Segment>
     </>
   );
 };

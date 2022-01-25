@@ -1,79 +1,77 @@
-import React from "react";
-import {
-  Button,
-  Form,
-  Header,
-  Container,
-  Divider,
-  Grid,
-  Message,
-} from "semantic-ui-react";
+import React, { useState } from "react";
+import { Button, Form, Header, Container, Grid } from "semantic-ui-react";
+import styledComponents from "styled-components";
+import NewPostPreview from "./NewPostPreview";
 
 const NewPostForm = (props) => {
+  const [previewTitle, setPreviewTitle] = useState("");
   return (
-    <Container style={{ paddingTop: 50 }}>
-      <Grid stackable>
-        <Grid.Column width={1} />
-        <Grid.Column width={8} style={{ border: "1px solid #000" }}>
-          <Container style={{ padding: 20 }}>
-            <Header as="h2">Post New Entry:</Header>
-            <Divider />
-            <Form
-              onSubmit={props.onNewPost}
-              className={`${props.onIsLoading === true ? "loading" : ""}`}
-            >
-              <Grid doubling columns={2}>
-                <Grid.Column width={6}>
+    <>
+      <Container>
+        <Header as="h2">Post New Entry:</Header>
+
+        <Form onSubmit={props.onNewPost}>
+          <Grid columns={2}>
+            <Grid.Column>
+              <Form.Input
+                label="New Blog Title:"
+                type="text"
+                onChange={props.onChangeTitle}
+                value={props.previewTitle}
+              />
+              <Form.Input
+                label="Preview Image (URL):"
+                type="text"
+                onChange={props.onChangePreviewImage}
+                value={props.previewImage}
+              />
+              <Grid columns={2}>
+                <Grid.Column>
                   <Form.Input
                     type="date"
                     label="Post Date:"
                     onChange={props.onChangeDate}
+                    value={props.previewDate}
                   />
                 </Grid.Column>
-                <Grid.Column width={10}>
-                  <div className="field">
-                    <label htmlFor="author">Author:</label>
-                    <div className="ui input">
-                      <select
-                        placeholder="Choose Author"
-                        onChange={props.onChangeAuthor}
-                      >
-                        <option>Choose Author</option>
-                        <option>Casi</option>
-                        <option>Danny</option>
-                      </select>
-                    </div>
-                  </div>
+                <Grid.Column>
+                  <label htmlFor="author">Author:</label>
+                  <select
+                    placeholder="Choose Author"
+                    onChange={props.onChangeAuthor}
+                    value={props.previewAuthor}
+                  >
+                    <option>Choose Author</option>
+                    <option>Casi</option>
+                    <option>Danny</option>
+                  </select>
                 </Grid.Column>
               </Grid>
-              <Grid style={{ marginBottom: 10 }}>
-                <Grid.Column width={16}>
-                  <Form.Input
-                    label="New Blog Title:"
-                    type="text"
-                    onChange={props.onChangeTitle}
-                  />
-                </Grid.Column>
-                <Grid.Column width={16}>
-                  <Form.TextArea
-                    id="content"
-                    label="Content:"
-                    placeholder="Tell us what happened."
-                    type="text"
-                    style={{ minHeight: 200 }}
-                    onChange={props.onChangeContent}
-                  />
-                </Grid.Column>
-              </Grid>
-              <Button type="submit" primary>
+            </Grid.Column>
+            <Grid.Column>
+              <Form.TextArea
+                id="content"
+                label="Content:"
+                placeholder="Tell us what happened."
+                type="text"
+                style={{ minHeight: 200 }}
+                onChange={props.onChangeContent}
+                value={props.previewContent}
+              />
+
+              <Button type="submit" primary floated="right">
                 Submit
               </Button>
-            </Form>
-          </Container>
-        </Grid.Column>
-        <Grid.Column />
-      </Grid>
-    </Container>
+              <NewPostPreview
+                previewTitle={props.previewTitle}
+                previewContent={props.previewContent}
+                previewImage={props.previewImage}
+              />
+            </Grid.Column>
+          </Grid>
+        </Form>
+      </Container>
+    </>
   );
 };
 

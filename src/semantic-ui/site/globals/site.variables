@@ -1,3 +1,6 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@headlineFont: Fraunces, Roboto, sans-serif;
+@textFont: Commissioner, Roboto, sans-serif;

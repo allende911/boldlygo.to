@@ -1,6 +1,7 @@
 import React from "react";
 import DisplayDate from "./DisplayDate";
 import { Card, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const PostCardSchema = (props) => {
   return (
@@ -11,9 +12,13 @@ const PostCardSchema = (props) => {
         <Card.Description>
           {`${props.postContent.slice(0, 150)}...`}
         </Card.Description>
-        <a href={props.postSlug} style={{ marginTop: 10, display: "block" }}>
+        <Link
+          to={`/blogs/${props.id}`}
+          key={props.id}
+          style={{ marginTop: 10, display: "block" }}
+        >
           Read More...
-        </a>
+        </Link>
       </Card.Content>
       <Card.Content extra>
         <Card.Meta>{`By: ${props.postAuthor}`}</Card.Meta>
