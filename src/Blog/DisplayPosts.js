@@ -13,7 +13,7 @@ const DisplayPosts = () => {
     get("blogs?populate=*").then((data) => {
       setBlogs(strapiParse(data));
     });
-  }, [get]);
+  }, []);
 
   // let first = blogs
   //   .slice()

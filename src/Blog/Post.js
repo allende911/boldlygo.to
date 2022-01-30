@@ -34,7 +34,7 @@ export default function PostData(props) {
     get(`${id.id}?populate[blogPost][populate]=*`).then((post) => {
       setData(() => strapiParse(post));
     });
-  }, [id.id, get]);
+  }, []);
 
   return (
     <>
