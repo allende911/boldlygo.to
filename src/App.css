@@ -30,3 +30,8 @@ h6 {
   font-family: Fraunces;
   font-weight: 700;
 }
+
+.ui.cards > .card > .image,
+.ui.card > .image {
+  width: 100%;
+}
