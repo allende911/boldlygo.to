@@ -7,7 +7,7 @@ import { strapiParse } from "strapi-parse";
 const DisplayPosts = () => {
   const [blogs, setBlogs] = useState([]);
   const [order, setOrder] = useState(true);
-  const { get, loading } = useFetch("http://localhost:1337/api/");
+  const { get, loading } = useFetch("https://boldlygoto.herokuapp.com/api/");
 
   useEffect(() => {
     get("blogs?populate=*").then((data) => {

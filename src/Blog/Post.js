@@ -24,7 +24,9 @@ const QuoteAuthor = styled.p`
 `;
 
 export default function PostData(props) {
-  const { get, loading } = useFetch("http://localhost:1337/api/blogs/");
+  const { get, loading } = useFetch(
+    "https://boldlygoto.herokuapp.com/api/blogs/"
+  );
   const [data, setData] = useState([]);
   let id = useParams();
 
