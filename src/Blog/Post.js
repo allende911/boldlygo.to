@@ -34,7 +34,7 @@ export default function PostData(props) {
     get(`${id.id}?populate[blogPost][populate]=*`).then((post) => {
       setData(() => strapiParse(post));
     });
-  }, []);
+  }, [id.id, get]);
 
   return (
     <>
@@ -46,14 +46,14 @@ export default function PostData(props) {
 
           {data.length !== 0 ? (
             data.blogPost.map((content) =>
-              content.__component == "post.quote" ? (
+              content.__component === "post.quote" ? (
                 <>
                   <Quote>{content.quoteText}</Quote>
                   <QuoteAuthor>{content.quoteAuthor}</QuoteAuthor>
                 </>
-              ) : content.__component == "post.text-block" ? (
+              ) : content.__component === "post.text-block" ? (
                 <p>{content.textBlock}</p>
-              ) : content.__component == "post.media" ? (
+              ) : content.__component === "post.media" ? (
                 <Image
                   style={{ marginBottom: 10 }}
                   fluid
