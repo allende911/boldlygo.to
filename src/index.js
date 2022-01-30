@@ -4,18 +4,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import "semantic-ui-less/semantic.less";
-import AddPostHandler from "./Blog/AddPostHandler";
-import TopBar from "./UI/TopBar";
-import SinglePost from "./Blog/SinglePost";
+import Post from "./Blog/Post";
+import Heading from "./UI/Heading";
+import Footer from "./UI/Footer";
 
 ReactDOM.render(
   <BrowserRouter>
-    <TopBar />
+    <Heading />
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="newPost" element={<AddPostHandler />} />
-      <Route path="blogs/:id" element={<SinglePost />} />
+      <Route path="blogs/:id" element={<Post />} />
     </Routes>
+    <Footer />
   </BrowserRouter>,
   document.getElementById("root")
 );

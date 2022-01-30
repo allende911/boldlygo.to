@@ -9,9 +9,6 @@ const PostCardSchema = (props) => {
       <Image src={props.postPreviewImage} size="small" wrapped ui={false} />
       <Card.Content>
         <Card.Header>{props.postTitle}</Card.Header>
-        <Card.Description>
-          {`${props.postContent.slice(0, 150)}...`}
-        </Card.Description>
         <Link
           to={`/blogs/${props.id}`}
           key={props.id}

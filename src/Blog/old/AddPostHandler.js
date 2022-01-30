@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NewPostForm from "./NewPostForm";
 import NewPostPreview from "./NewPostPreview";
+import { strapiParse } from "strapi-parse";
 
 const AddPostHandler = () => {
   const [author, setAuthor] = useState("");
@@ -67,7 +68,8 @@ const AddPostHandler = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setNewPost((prevData) => data);
+        setNewPost((prevData) => strapiParse(data));
+        console.log(data.data.id);
       })
       .catch((error) => {
         console.log(error);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../Utils/useFetch";
+import useFetch from "../../Utils/useFetch";
 import { strapiParse } from "strapi-parse";
 import { Container, Item, Segment, Header } from "semantic-ui-react";
 import styled from "styled-components";
