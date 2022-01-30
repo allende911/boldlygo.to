@@ -6,7 +6,7 @@ export default function Heading() {
   return (
     <Segment basic>
       <Header as="h1">
-        <Link to="/">BoldyGo.to</Link>
+        <Link to="/">BoldlyGo.to</Link>
       </Header>
       <Divider />
     </Segment>
