@@ -13,7 +13,7 @@ const DisplayPosts = () => {
     get("blogs?populate=*").then((data) => {
       setBlogs(strapiParse(data));
     });
-  }, []);
+  }, [get]);
 
   let first = blogs
     .slice()
@@ -45,13 +45,13 @@ const DisplayPosts = () => {
       />
     ));
 
-  const handleFirstToLatest = (event) => {
-    setOrder(false);
-  };
+  // const handleFirstToLatest = (event) => {
+  //   setOrder(false);
+  // };
 
-  const handleLatesttoFirst = (event) => {
-    setOrder(true);
-  };
+  // const handleLatesttoFirst = (event) => {
+  //   setOrder(true);
+  // };
 
   return (
     <Segment basic>
