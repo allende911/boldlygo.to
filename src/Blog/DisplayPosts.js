@@ -15,35 +15,35 @@ const DisplayPosts = () => {
     });
   }, [get]);
 
-  let first = blogs
-    .slice()
-    .sort((a, b) => (b.Date < a.Date ? -1 : 1))
-    .map((post) => (
-      <PostCardSchema
-        key={post.id}
-        id={post.id}
-        postPreviewImage={post.Thumbnail.url}
-        postTitle={post.Title}
-        postDate={post.Date}
-        postSlug={post.Slug}
-        postAuthor={post.Author}
-      />
-    ));
+  // let first = blogs
+  //   .slice()
+  //   .sort((a, b) => (b.Date < a.Date ? -1 : 1))
+  //   .map((post) => (
+  //     <PostCardSchema
+  //       key={post.id}
+  //       id={post.id}
+  //       postPreviewImage={post.Thumbnail.url}
+  //       postTitle={post.Title}
+  //       postDate={post.Date}
+  //       postSlug={post.Slug}
+  //       postAuthor={post.Author}
+  //     />
+  //   ));
 
-  let latest = blogs
-    .slice()
-    .sort((a, b) => (b.Date > a.Date ? -1 : 1))
-    .map((post) => (
-      <PostCardSchema
-        key={post.id}
-        id={post.id}
-        postPreviewImage={post.Thumbnail.url}
-        postTitle={post.Title}
-        postDate={post.Date}
-        postSlug={post.Slug}
-        postAuthor={post.Author}
-      />
-    ));
+  // let latest = blogs
+  //   .slice()
+  //   .sort((a, b) => (b.Date > a.Date ? -1 : 1))
+  //   .map((post) => (
+  //     <PostCardSchema
+  //       key={post.id}
+  //       id={post.id}
+  //       postPreviewImage={post.Thumbnail.url}
+  //       postTitle={post.Title}
+  //       postDate={post.Date}
+  //       postSlug={post.Slug}
+  //       postAuthor={post.Author}
+  //     />
+  //   ));
 
   // const handleFirstToLatest = (event) => {
   //   setOrder(false);
