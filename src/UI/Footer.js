@@ -7,6 +7,9 @@ export default function Footer() {
       <Divider />
       <Menu secondary>
         <Menu.Item>&copy; 2022 sdmacdonald</Menu.Item>
+        <Menu.Item right>
+          <a href="https://boldlygoto.herokuapp.com/admin/auth/login">Login</a>
+        </Menu.Item>
       </Menu>
     </Segment>
   );
