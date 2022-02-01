@@ -2,5 +2,12 @@
      User Global Variables
 *******************************/
 
-@headlineFont: Fraunces, Roboto, sans-serif;
-@textFont: Commissioner, Roboto, sans-serif;
+@headerFont: Poppins;
+@headerFontWeight: 700;
+@pageFont: Poppins;
+@pageFontWeight: 400;
+@paragraphLineHeight: 2em;
+@itemFontWeight: 700;
+@h2: 2.5rem;
+
+@primaryColor: #3d405b;
