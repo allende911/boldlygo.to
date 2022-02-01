@@ -1,13 +1,23 @@
-import { Container } from "semantic-ui-react";
 import "./App.css";
-import DisplayPosts from "./Blog/DisplayPosts";
+import Navigation from "./UI/Navigation";
+import Footer from "./UI/Footer";
+import MobileNavigation from "./UI/MobileNavigation";
+import { Media, MediaContextProvider } from "./Utils/MediaProvider";
+import PostParse from "./Blog/PostParse";
 
 function App() {
   return (
     <div className="App">
-      <Container>
-        <DisplayPosts />
-      </Container>
+      <MediaContextProvider>
+        <Media at="sm">
+          <MobileNavigation />
+        </Media>
+        <Media greaterThanOrEqual="md">
+          <Navigation />
+        </Media>
+        <PostParse />
+      </MediaContextProvider>
+      <Footer />
     </div>
   );
 }
