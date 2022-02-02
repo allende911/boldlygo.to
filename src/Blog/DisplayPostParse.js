@@ -22,7 +22,7 @@ export default function DisplayPostParse() {
   return (
     <Segment basic>
       {loading && (
-        <Dimmer>
+        <Dimmer active>
           <Loader />
         </Dimmer>
       )}
