@@ -23,7 +23,7 @@ export default function DisplayPosts(props) {
                   <p>{text.textBlock}</p>
                 ))}
               <Link to={`/api/blogs/${blog.id}`}>
-                <Button primary size="large">
+                <Button primary disabled size="large">
                   Read More
                 </Button>
               </Link>
