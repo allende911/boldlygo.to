@@ -11,7 +11,7 @@ export default function DisplayPostParse() {
 
   useEffect(() => {
     get(
-      "blogs?sort=Date&fields=id&fields=Title&fields=Date&fields=Slug&populate[blogPost][populate]=*"
+      "blogs?sort=Date&fields=id&fields=Title&fields=Date&fields=Slug&populate[postContent][populate]=*"
     ).then((data) => {
       if (data) {
         setBlogs((prevData) => strapiParse(data));
