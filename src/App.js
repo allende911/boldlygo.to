@@ -3,7 +3,7 @@ import Navigation from "./UI/Navigation";
 import Footer from "./UI/Footer";
 import MobileNavigation from "./UI/MobileNavigation";
 import { Media, MediaContextProvider } from "./Utils/MediaProvider";
-import PostParse from "./Blog/PostParse";
+import DisplayPostParse from "./Blog/DisplayPostParse";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Media greaterThanOrEqual="md">
           <Navigation />
         </Media>
-        <PostParse />
+        <DisplayPostParse />
       </MediaContextProvider>
       <Footer />
     </div>

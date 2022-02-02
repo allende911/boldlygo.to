@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import DisplayDate from "./DisplayDate";
 import { Grid, Header, Image, Button, Divider } from "semantic-ui-react";
 
-export default function DisplayPosts({ blogs }) {
+export default function DisplayPosts(props) {
   return (
     <Grid relaxed padded stackable id="postTop">
-      {blogs.map((blog) => (
+      {props.blogs.map((blog) => (
         <>
           <Grid.Row
             columns={2}
@@ -21,9 +22,11 @@ export default function DisplayPosts({ blogs }) {
                 .map((text) => (
                   <p>{text.textBlock}</p>
                 ))}
-              <Button disabled primary size="large">
-                Read More
-              </Button>
+              <Link to={`/api/blogs/${blog.id}`}>
+                <Button primary size="large">
+                  Read More
+                </Button>
+              </Link>
             </Grid.Column>
             <Grid.Column>
               {blog.blogPost
@@ -34,7 +37,6 @@ export default function DisplayPosts({ blogs }) {
                     fluid
                     circular
                     src={media.postImage.url}
-                    label={media.postImage.caption}
                     alt={media.postImage.alternativeText}
                   />
                 ))}

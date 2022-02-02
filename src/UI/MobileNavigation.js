@@ -28,7 +28,7 @@ export default function MobileNavigation(props) {
           visible={sidebarOpened}
           style={{ maxHeight: 240 }}
         >
-          <Menu.Item>Home</Menu.Item>
+          <Menu.Item link="/">Home</Menu.Item>
           <Menu.Item disabled name="Latest" />
           <Menu.Item disabled name="Photos" />
           <Menu.Item disabled name="About" />

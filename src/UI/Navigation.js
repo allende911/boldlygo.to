@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Segment } from "semantic-ui-react";
 import Heading from "./Heading";
+import { Link } from "react-router-dom";
 
 export default function Navigation(props) {
   const [activeItem, setActiveItem] = useState("home");
@@ -20,6 +21,7 @@ export default function Navigation(props) {
           name="Home"
           active={activeItem === "home"}
           onClick={() => setActiveItem("home")}
+          link="/"
         />
         <Menu.Item
           disabled
