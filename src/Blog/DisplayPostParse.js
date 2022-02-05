@@ -6,7 +6,6 @@ import { Dimmer, Loader, Segment } from "semantic-ui-react";
 
 export default function DisplayPostParse() {
   const [blogs, setBlogs] = useState([]);
-  const [viewPost, setViewPost] = useState([]);
   const { get, loading } = useFetch("https://boldlygoto.herokuapp.com/api/");
 
   useEffect(() => {
@@ -22,7 +21,7 @@ export default function DisplayPostParse() {
   return (
     <Segment basic>
       {loading && (
-        <Dimmer active>
+        <Dimmer>
           <Loader />
         </Dimmer>
       )}

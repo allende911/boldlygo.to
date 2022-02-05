@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Sidebar, Segment, Icon } from "semantic-ui-react";
 import Heading from "./Heading";
+import { Link } from "react-router-dom";
 
 export default function MobileNavigation(props) {
   const [sidebarOpened, setSidebarOpened] = useState(false);
@@ -28,7 +29,7 @@ export default function MobileNavigation(props) {
           visible={sidebarOpened}
           style={{ maxHeight: 240 }}
         >
-          <Menu.Item link="/">Home</Menu.Item>
+          <Menu.Item name="Home" as={Link} to="/" />
           <Menu.Item disabled name="Latest" />
           <Menu.Item disabled name="Photos" />
           <Menu.Item disabled name="About" />
@@ -36,6 +37,7 @@ export default function MobileNavigation(props) {
           <Menu.Item
             name="Login"
             href="https://boldlygoto.herokuapp.com/admin"
+            target="_blank"
           />
         </Sidebar>
 

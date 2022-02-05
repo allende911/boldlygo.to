@@ -21,7 +21,8 @@ export default function Navigation(props) {
           name="Home"
           active={activeItem === "home"}
           onClick={() => setActiveItem("home")}
-          link="/"
+          as={Link}
+          to="/"
         />
         <Menu.Item
           disabled
@@ -51,6 +52,7 @@ export default function Navigation(props) {
           position="right"
           name="Login"
           href="https://boldlygoto.herokuapp.com/admin"
+          target="_blank"
         />
       </Menu>
 

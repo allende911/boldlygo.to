@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Header, Segment, Icon, Divider } from "semantic-ui-react";
-import { Link, animateScroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 export default function Heading(props) {
   return (
