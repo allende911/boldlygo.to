@@ -9,6 +9,7 @@ import {
   Modal,
   Icon,
 } from "semantic-ui-react";
+import ReactMarkdown from "react-markdown";
 
 export default function DisplayPosts(props) {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function DisplayPosts(props) {
               .filter((textBlock) => textBlock.__component == "post.text-block")
               .slice(0, 1)
               .map((text) => (
-                <p key={text.id}>{text.textBlock}</p>
+                <ReactMarkdown children={text.textBlock} key={text.id} />
               ))}
             <Modal
               closeIcon
@@ -47,7 +48,10 @@ export default function DisplayPosts(props) {
                 <Modal.Description>
                   {blog.postContent.map((content) =>
                     content.__component == "post.text-block" ? (
-                      <p>{content.textBlock}</p>
+                      <ReactMarkdown
+                        children={content.textBlock}
+                        key={content.id}
+                      />
                     ) : content.__component == "post.media" ? (
                       <Image
                         size="medium"

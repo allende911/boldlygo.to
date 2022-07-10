@@ -6,7 +6,7 @@ export default function Footer() {
     <Segment basic>
       <Divider />
       <Menu secondary>
-        <Menu.Item>&copy; 2022 sdmacdonald</Menu.Item>
+        <Menu.Item>&copy; 2022 @sm</Menu.Item>
       </Menu>
     </Segment>
   );
